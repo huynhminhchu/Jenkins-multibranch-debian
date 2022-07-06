@@ -12,7 +12,7 @@ pipeline {
          steps {
             script {
                echo 'This branch: ' + env.BRANCH_NAME
-                sh 'wget http://ftp.de.debian.org/debian/pool/main/b/busybox/busybox_1.30.1-6+b3_amd64.deb'
+                sh 'wget http://ftp.de.debian.org/debian/pool/main/b/busybox/busybox_1.30.1-6+b3_arm64.deb'
                 buildInfoInit(build_name: "test-debian-multibranch", build_number: "${BUILD_NUMBER}")
                 artifactoryDebianPush("test-debian-multibranch", "${BUILD_NUMBER}")
             
